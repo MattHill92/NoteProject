@@ -7,7 +7,7 @@ public class Command {
         int indexOfFirstSpace = input.indexOf(" ");
 
         if (indexOfFirstSpace != -1) {
-            c.command = input.substring(0, indexOfFirstSpace);
+            c.command = input.substring(0, indexOfFirstSpace).toLowerCase();
             if (input.length() > indexOfFirstSpace+1)
                 c.target = input.substring(indexOfFirstSpace+1);
         }

@@ -1,83 +1,93 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Session {
 
     String username;
-    ArrayList<String> noteTitles = new ArrayList<>();
-    ArrayList<String> noteBodies = new ArrayList<>();
     DatabaseManager database;
 
-    public Session(String username, String[] noteTitles, String[] noteBodies, DatabaseManager database) {
+    ArrayList<SearchResult> searchResults = new ArrayList<>();
+    Post post;
+
+    public Session(String username, DatabaseManager database) {
         this.username = username;
-        this.noteTitles.addAll(Arrays.asList(noteTitles));
-        this.noteBodies.addAll(Arrays.asList(noteBodies));
         this.database = database;
     }
 
-    public void addNote(String title, String body) {
-        if (checkNameAlreadyExists(title)) return;
-
-        database.addNote(username, title, body);
-        refreshNotes();
-
-        Run.logger.info("User " + username + " added note " + title);
+    public void fetchRecentSearchResults(){
+        searchResults = database.searchRecentPosts();
+    }
+    public void fetchMyPostResults(){
+        searchResults = database.searchMyPosts(username);
+    }
+    public void fetchTitleResults(String substring) {
+        searchResults = database.searchPostsByTitle(substring);
+    }
+    public void fetchTopicResults(String topic) {
+        searchResults = database.searchPostsByTopic(topic);
     }
 
-    public void removeNote(String title) {
-        if (!checkCanFindName(title)) return;
-
-        database.removeNote(username, title);
-        refreshNotes();
-
-        Run.logger.info("User " + username + " removed note \"" + title + "\"");
+    public void requestDeletePostComment(int targetIndex) {
+        int commentID = post.getComments().get(targetIndex).getId();
+        database.removeComment(commentID);
+        refreshPost();
     }
 
-    public void renameNote(String oldTitle, String newTitle){
-        if (!checkCanFindName(oldTitle)) return;
-        if (checkNameAlreadyExists(newTitle)) return;
-
-        database.renameNote(username, oldTitle, newTitle);
-        refreshNotes();
-
-        Run.logger.info("User " + username + " renamed note \"" + oldTitle +"\" to \"" + newTitle + "\"" );
+    public void requestLeaveComment(String comment) {
+        database.addComment(post.getId(), username, comment);
+        refreshPost();
     }
 
-    private boolean checkNameAlreadyExists(String newTitle) {
-        if (!noteTitles.contains(newTitle)) return false;
-        String message = "Instruction failed: File named \""+ newTitle +"\" already exists.";
-        System.out.println(message);
-        Run.logger.info(message);
-        return true;
+    private void refreshPost() {
+        fetchPost(post.getId());
     }
 
-    private boolean checkCanFindName(String title) {
-        if (noteTitles.contains(title)) return true;
-        String message = "Rename failed: Cannot find \""+ title +"\".";
-        System.out.println(message);
-        Run.logger.info(message);
-        return false;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void printNotes(){
-        System.out.println("\n" + username + " has " + noteTitles.size()+" notes:\n");
-        for (int i = 0; i < noteTitles.size(); i++){
-            if (noteTitles.get(i) != null)
-                System.out.println(noteTitles.get(i) + ": " + noteBodies.get(i));
-        }
-        System.out.println();
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    private void refreshNotes() {
-
+    public ArrayList<SearchResult> getSearchResults() {
+        return searchResults;
     }
 
-    public ArrayList<String> getNoteTitles(){
-        return noteTitles;
+    public void setSearchResults(ArrayList<SearchResult> searchResults) {
+        this.searchResults = searchResults;
     }
 
-    public ArrayList<String> getNoteBodies(){
-        return noteBodies;
+    public Post fetchPost(int postID) {
+        post = database.getPost(postID);
+        return post;
     }
+
+    public Post getPost(){
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
+
+    public void requestUpdatePost(String title, String body) {
+        database.updatePost(post.getId(), title, body);
+        refreshPost();
+    }
+
+    public void requestDeletePost() {
+        database.deletePost(post.getId());
+        fetchRecentSearchResults();
+    }
+
+    public void requestCreatePost(String title, String topic, String body) {
+        int newPostId = database.addPost(title, topic, body, username);
+        fetchRecentSearchResults();
+        fetchPost(newPostId);
+    }
+
+
 
 }

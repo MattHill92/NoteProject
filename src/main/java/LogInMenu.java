@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class LogInMenu {
 
     LogInManager lm;
-    NoteSession ns = null;
+    Session session = null;
     Scanner sc;
     boolean requestExit = false;
 
@@ -28,7 +28,7 @@ public class LogInMenu {
                     requestExit = true;
                     break;
             }
-        } while (!requestExit && ns == null);
+        } while (!requestExit && session == null);
     }
 
     private void processRegister() {
@@ -36,7 +36,7 @@ public class LogInMenu {
         String password = requestPassword();
         String confirm = requestConfirm();
         lm.registerAccount(username, password, confirm);
-        ns = lm.getNoteSession();
+        session = lm.getSession();
         Run.logger.info("Register attempted - username: " + username);
     }
 
@@ -44,7 +44,7 @@ public class LogInMenu {
         String username = requestUsername();
         String password = requestPassword();
         lm.login(username, password);
-        ns = lm.getNoteSession();
+        session = lm.getSession();
         Run.logger.info("Login attempted - username: " + username);
     }
 
@@ -63,12 +63,12 @@ public class LogInMenu {
         return sc.nextLine();
     }
 
-    public NoteSession getSession() {
-        return ns;
+    public Session getSession() {
+        return session;
     }
 
     public void clearCatche(){
-        ns = null;
+        session = null;
     }
 
     public boolean isRequestingExit(){return requestExit;}

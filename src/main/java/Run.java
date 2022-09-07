@@ -11,29 +11,29 @@ public class Run {
 
 
     Scanner sc = new Scanner(System.in);
-    NoteSession ns;
+    Session session;
     DatabaseManager dm = new DatabaseManager();
     LogInManager lm = new LogInManager(dm);
     LogInMenu logInMenu = new LogInMenu(sc, lm);
-    NoteSessionMenu noteMenu = new NoteSessionMenu(sc);
+    SessionMenu sessionMenu = new SessionMenu(sc);
 
     public void run(){
         logger.info("Application Started");
         do {
 
             logInMenu.runMenu();
-            ns = logInMenu.getSession();
+            session = logInMenu.getSession();
 
-            if (ns != null) {
-                noteMenu.setSession(ns);
-                noteMenu.runMenu();
-                logger.info("User "+ns.username+" logged out.");
+            if (session != null) {
+                sessionMenu.setSession(session);
+                sessionMenu.runMenu();
+                logger.info("User "+session.username+" logged out.");
             }
 
 
             lm.logout();
             logInMenu.clearCatche();
-            ns = null;
+            session = null;
 
         } while (!logInMenu.isRequestingExit());
     }

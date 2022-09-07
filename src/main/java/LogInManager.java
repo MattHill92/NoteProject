@@ -1,6 +1,6 @@
 public class LogInManager {
 
-    private NoteSession ns;
+    private Session session;
     private DatabaseManager dm;
 
     public LogInManager(DatabaseManager dm){
@@ -13,7 +13,8 @@ public class LogInManager {
 
         String salt = PasswordHelper.generateSalt();
         String hashedPass = PasswordHelper.saltAndHash(password, salt);
-        ns = dm.addUser(username, hashedPass, salt);
+        dm.addUser(username, hashedPass, salt);
+        session = dm.getUserSession(username);
 
         String message = "Register Successful, logged in as " + username;
         System.out.println(message);
@@ -48,7 +49,7 @@ public class LogInManager {
 
         if (checkIncorrectPassword(givenPassword, password)) return false;
 
-        ns = dm.getUserNoteSession(givenUsername);
+        session = dm.getUserSession(givenUsername);
 
         String message = "Successful: logged in as " + givenUsername;
         System.out.println(message);
@@ -73,12 +74,12 @@ public class LogInManager {
         return false;
     }
 
-    public NoteSession getNoteSession(){
-        return ns;
+    public Session getSession(){
+        return session;
     }
 
     public void logout(){
-        ns = null;
+        session = null;
     }
 
 }
