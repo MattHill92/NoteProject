@@ -1,16 +1,30 @@
+package Model;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Post {
 
-    private int id;
+    private int id = 0;
     private String title;
     private String body;
-    private Date date;
-    private int view_count;
+    private Date date = new Date();
+    private int view_count = 0;
     private String topic;
     private String username;
-    private ArrayList<Comment> comments;
+    
+    public Post(){};
+
+    public Post(int id, String title, String body, Date date, int view_count, String topic, String username) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+        this.date = date;
+        this.view_count = view_count;
+        this.topic = topic;
+        this.username = username;
+    }
 
     public int getId() {
         return id;
@@ -68,11 +82,4 @@ public class Post {
         this.username = username;
     }
 
-    public ArrayList<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(ArrayList<Comment> comments) {
-        this.comments = comments;
-    }
 }

@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.Date;
 
 public class SearchResult {
@@ -8,6 +10,19 @@ public class SearchResult {
     String username;
     Date date;
     int view_count;
+
+    public SearchResult(){
+
+    }
+
+    public SearchResult(int post_id, String post_title, String topic, String username, Date date, int view_count) {
+        this.post_id = post_id;
+        this.post_title = post_title;
+        this.topic = topic;
+        this.username = username;
+        this.date = date;
+        this.view_count = view_count;
+    }
 
     public int getPost_id() {
         return post_id;
@@ -57,8 +72,20 @@ public class SearchResult {
         this.view_count = view_count;
     }
 
+//    @Override
+//    public String toString() {
+//        return "| " + String.format("%-10.10s",topic) + " | " + String.format("%-40.40s", post_title) + " | " + String.format("%-3s",view_count) + " | Posted on " + date +" by " +username;
+//    }
+
     @Override
     public String toString() {
-        return "| " + String.format("%-10.10s",topic) + " | " + String.format("%-40.40s", post_title) + " | " + String.format("%-3s",view_count) + " | Posted on " + date +" by " +username;
+        return "Model.SearchResult{" +
+                "post_id=" + post_id +
+                ", post_title='" + post_title + '\'' +
+                ", topic='" + topic + '\'' +
+                ", username='" + username + '\'' +
+                ", date=" + date +
+                ", view_count=" + view_count +
+                '}';
     }
 }

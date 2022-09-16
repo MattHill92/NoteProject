@@ -1,3 +1,5 @@
+package Util;
+
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.Random;

@@ -10,19 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b7660c4-e0f1-4edd-b355-90068f3a1c06" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MessageBoardAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/MessageBoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DummyMessageBoardDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LogInManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LogInManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LogInMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LogInMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SearchResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SessionMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SessionMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewPostMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewPostMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/ConnectionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/MessageBoardDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LogInManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LogInMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PasswordHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/PasswordHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Run.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SearchResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Session.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SessionMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewPostMenu.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +41,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,17 +73,23 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Matt/IdeaProjects/SQL-challenges&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Matt/IdeaProjects/Project_1_MessageBoard&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Matt\IdeaProjects\Project_1_MessageBoard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Matt\IdeaProjects\NoteProject\src\main\resources" />
@@ -74,20 +98,118 @@
       <recent name="C:\Users\Matt\IdeaProjects\NoteProject\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Model" />
+      <recent name="DAO" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.MessageBoardAPI">
+    <configuration name="MessageBoardAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MessageBoardAPI" />
       <module name="NoteProject.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ServiceTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ServiceTests.AddCommentTest1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ServiceTests.AddCommentTest1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ServiceTests.AddPostTest1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ServiceTests.AddPostTest1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ServiceTests.UserMethodTest4" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ServiceTests.UserMethodTest4&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MessageBoardAPI" />
+        <item itemvalue="Gradle.ServiceTests" />
+        <item itemvalue="Gradle.ServiceTests.AddCommentTest1" />
+        <item itemvalue="Gradle.ServiceTests.AddPostTest1" />
+        <item itemvalue="Gradle.ServiceTests.UserMethodTest4" />
       </list>
     </recent_temporary>
   </component>
@@ -115,7 +237,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
